@@ -11,7 +11,7 @@ const PokemonDetailMiddleware = ({ dispatch }) => next => action => {
 
       let receivePokemonError = () => {console.log('You done goofed');};
 
-      fetchPokemon(action.pokemon, receivePokemonSuccess, receivePokemonError);
+      fetchPokemon(action.id, receivePokemonSuccess, receivePokemonError);
       return next(action);
     default:
       return next(action);

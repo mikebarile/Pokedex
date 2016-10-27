@@ -9,7 +9,7 @@ const Pokemon = (props) => {
     <h4>{props.poke.name}</h4>
     <img src={props.poke.image_url} />
   </li>
-);
+  );
 };
 
 export default withRouter(Pokemon);

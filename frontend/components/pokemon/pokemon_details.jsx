@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router';
 
 const PokemonDetails = ({pokemon}) => {
+  console.log(pokemon);
   return(
     <ul>
       <li><img src={pokemon.image_url}/></li>
