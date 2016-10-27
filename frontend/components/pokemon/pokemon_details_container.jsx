@@ -3,7 +3,7 @@ import PokemonDetails from './pokemon_details';
 import { selectPokemon } from '../../reducers/selectors';
 
 const mapStateToProps = state => ({
-  pokemon: selectPokemon(state)
+  pokemonDetail: selectPokemon(state)
 });
 
 export default connect(

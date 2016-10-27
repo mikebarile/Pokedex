@@ -4,6 +4,7 @@ import PokemonIndexContainer from './pokemon/pokemon_index_container';
 import PokemonDetailsContainer from './pokemon/pokemon_details_container';
 import { Router, Route, hashHistory } from 'react-router';
 import { requestPokemon, requestAllPokemon } from '../actions/pokemon_actions';
+import ItemDetailsContainer from './items/item_details_container';
 
 
 const Root = ({store}) => {
@@ -18,9 +19,11 @@ const Root = ({store}) => {
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
-        <Route path='/' component = {PokemonIndexContainer} onEnter={requestOnEnter}>
-          <Route path='/pokemon/:id' component = {PokemonDetailsContainer} onEnter={requestOnShow}/>
-        </Route>
+          <Route path="/" component={PokemonIndexContainer} onEnter={requestOnEnter}>
+              <Route path="pokemon/:id" component={PokemonDetailsContainer} onEnter={requestOnShow}>
+                  <Route path="item/:id" component={ItemDetailsContainer} />
+              </Route>
+          </Route>
       </Router>
     </Provider>
   );
