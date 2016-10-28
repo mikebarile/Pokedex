@@ -4,10 +4,13 @@ import { selectItems } from '../../reducers/selectors';
 import { createNewPokemon } from '../../actions/pokemon_actions';
 
 const mapDispatchToProps = (dispatch) => ({
-  createPokemon: (formParams) => dispatch(createNewPokemon(formParams))
+  createPokemon: (formParams) => {
+    console.log('dispatch is happening!');
+    dispatch(createNewPokemon(formParams));
+  }
 });
 
 export default connect(
-  mapDispatchToProps,
-  null
+  null,
+  mapDispatchToProps
 )(PokemonForm);
